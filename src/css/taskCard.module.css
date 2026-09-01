@@ -30,7 +30,15 @@
     color: #555;
 }
 
-.priority {
+.high {
     font-weight: bold;
     color: #ff0000;
+}
+.medium {
+    font-weight: bold;
+    color: #ffa500;
+}
+.low {
+    font-weight: bold;
+    color: #008000;
 }

@@ -1,13 +1,22 @@
 import styles from '../css/taskCard.module.css'
 
-export const TaskCard = () => {
+interface ITaskCardProps {
+    id: number;
+    title: string;
+    description: string;
+    category: string;
+    assignee: string;
+    priority: 'High' | 'Medium' | 'Low';
+}
+
+export const TaskCard = ({ id, title, description, category, assignee, priority }: ITaskCardProps) => {
     return (
-        <article className={styles.taskcard}>
-            <span className={styles.category}>Kategori</span>
-            <h3>Task Title</h3>
-            <p className={styles.description}>Description of the task goes here.</p>
-            <p className={styles.assignedTo}>Assigned to: John Doe</p>
-            <p className={styles.priority}>Priority: High</p>
+        <article id={id.toString()} className={styles.taskcard}>
+            <span className={styles.category}>{category}</span>
+            <h3>{title}</h3>
+            <p className={styles.description}>{description}</p>
+            <p className={styles.assignedTo}>Ansvarig: {assignee}</p>
+            <p className={styles[priority.toLowerCase()]}>Priority: {priority}</p>
         </article>
     )
 }

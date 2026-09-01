@@ -5,7 +5,7 @@ export const Header = () => {
         <header className={styles.header}>
             <h3>JUV25S - Utveckling av webbapplikationer</h3>
             <h1>Task Board</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Min första react-app med vite i kursen. Uppgiften är att skapa en enkel task board-applikation.</p>
         </header>
     );
 }

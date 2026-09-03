@@ -3,19 +3,121 @@ import { Column } from './components/Column';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header'
 import { TaskCard } from './components/TaskCard';
+import type { Task } from './types/Task';
+
+const tasks: Task[] = [
+	{
+		id: 1,
+		title: "Some Task",
+		description: "Description of the task goes here.",
+		category: "Utveckling",
+		assignee: "John Doe",
+		priority: "High",
+		status: "todo"
+	},
+	{
+		id: 2,
+		title: "Another Task",
+		description: "Description of another task goes here.",
+		category: "Design",
+		assignee: "Amina Ali",
+		priority: "Medium",
+		status: "doing"
+	},
+	{
+		id: 3,
+		title: "Yet Another Task",
+		description: "Description of yet another task goes here.",
+		category: "QA",
+		assignee: "Joakim Larsson",
+		priority: "Low",
+		status: "done"
+	},
+	{
+		id: 4,
+		title: "Fourth Task",
+		description: "Description of the fourth task goes here.",
+		category: "Utveckling",
+		assignee: "John Doe",
+		priority: "High",
+		status: "todo"
+	},
+	{
+		id: 5,
+		title: "Fifth Task",
+		description: "Description of the fifth task goes here.",
+		category: "Design",
+		assignee: "Amina Ali",
+		priority: "Medium",
+		status: "doing"
+	},
+	{
+		id: 6,
+		title: "Sixth Task",
+		description: "Description of the sixth task goes here.",
+		category: "QA",
+		assignee: "Joakim Larsson",
+		priority: "Low",
+		status: "done"
+	},
+	{
+		id: 7,
+		title: "Seventh Task",
+		description: "Description of the seventh task goes here.",
+		category: "Utveckling",
+		assignee: "John Doe",
+		priority: "High",
+		status: "todo"
+	},
+	{
+		id: 8,
+		title: "Eighth Task",
+		description: "Description of the eighth task goes here.",
+		category: "Design",
+		assignee: "Amina Ali",
+		priority: "Medium",
+		status: "doing"
+	},
+	{
+		id: 9,
+		title: "Ninth Task",
+		description: "Description of the ninth task goes here.",
+		category: "QA",
+		assignee: "Joakim Larsson",
+		priority: "Low",
+		status: "done"
+	}
+];
 
 function App() {
+
+	const todos: Task[] = tasks.filter(task => task.status === "todo");
+	const doing: Task[] = tasks.filter(task => task.status === "doing");
+	const done: Task[] = tasks.filter(task => task.status === "done");
+
 	return <>
 		<Header />
 		<main>
 			<Column title="Todo">
-				<TaskCard id={1} title="Some Task" description="Description of the task goes here." category="Utveckling" assignee="John Doe" priority="High" />
+				{
+					todos.map(task => (
+						<TaskCard key={task.id} {...task} />
+					))
+				}
 			</Column>
 			<Column title="Doing">
-				<TaskCard id={2} title="Another Task" description="Description of another task goes here." category="Design" assignee="Amina Ali" priority="Medium" />
+				{
+					doing.map(task => (
+						<TaskCard key={task.id} {...task} />
+					))
+				}
 			</Column>
 			<Column title="Done">
-				<TaskCard id={3} title="Yet Another Task" description="Description of yet another task goes here." category="QA" assignee="Joakim Larsson" priority="Low" />
+				{
+					done.map(task => (
+						<TaskCard key={task.id} {...task} />
+					))
+				}
 			</Column>
 		</main>
 		<Footer />

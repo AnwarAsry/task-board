@@ -22,7 +22,7 @@ const tasks: Task[] = [
 		description: "Description of another task goes here.",
 		category: "Design",
 		assignee: "Amina Ali",
-		priority: "Medium",
+		priority: "High",
 		status: "doing"
 	},
 	{
@@ -40,7 +40,7 @@ const tasks: Task[] = [
 		description: "Description of the fourth task goes here.",
 		category: "Utveckling",
 		assignee: "John Doe",
-		priority: "High",
+		priority: "Low",
 		status: "todo"
 	},
 	{
@@ -58,7 +58,7 @@ const tasks: Task[] = [
 		description: "Description of the sixth task goes here.",
 		category: "QA",
 		assignee: "Joakim Larsson",
-		priority: "Low",
+		priority: "High",
 		status: "done"
 	},
 	{
@@ -67,7 +67,7 @@ const tasks: Task[] = [
 		description: "Description of the seventh task goes here.",
 		category: "Utveckling",
 		assignee: "John Doe",
-		priority: "High",
+		priority: "Medium",
 		status: "todo"
 	},
 	{
@@ -76,7 +76,7 @@ const tasks: Task[] = [
 		description: "Description of the eighth task goes here.",
 		category: "Design",
 		assignee: "Amina Ali",
-		priority: "Medium",
+		priority: "High",
 		status: "doing"
 	},
 	{

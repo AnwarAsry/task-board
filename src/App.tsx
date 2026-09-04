@@ -2,6 +2,7 @@ import './App.css'
 import { Column } from './components/Column';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header'
+import { NewTaskForm } from './components/NewTaskForm';
 import { TaskCard } from './components/TaskCard';
 import type { Task } from './types/Task';
 
@@ -90,35 +91,39 @@ const tasks: Task[] = [
 ];
 
 function App() {
-
 	const todos: Task[] = tasks.filter(task => task.status === "todo");
 	const doing: Task[] = tasks.filter(task => task.status === "doing");
 	const done: Task[] = tasks.filter(task => task.status === "done");
 
 	return <>
 		<Header />
-		<main>
-			<Column title="Todo">
-				{
-					todos.map(task => (
-						<TaskCard key={task.id} {...task} />
-					))
-				}
-			</Column>
-			<Column title="Doing">
-				{
-					doing.map(task => (
-						<TaskCard key={task.id} {...task} />
-					))
-				}
-			</Column>
-			<Column title="Done">
-				{
-					done.map(task => (
-						<TaskCard key={task.id} {...task} />
-					))
-				}
-			</Column>
+		<main className="max-w-7xl w-full mx-auto px-2 sm:px-4 lg:px-6 py-10 space-y-10">
+			<section>
+				<NewTaskForm />
+			</section>
+			<section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<Column title="Todo">
+					{
+						todos.map(task => (
+							<TaskCard key={task.id} {...task} />
+						))
+					}
+				</Column>
+				<Column title="Doing">
+					{
+						doing.map(task => (
+							<TaskCard key={task.id} {...task} />
+						))
+					}
+				</Column>
+				<Column title="Done">
+					{
+						done.map(task => (
+							<TaskCard key={task.id} {...task} />
+						))
+					}
+				</Column>
+			</section>
 		</main>
 		<Footer />
 	</>;
